@@ -11,124 +11,126 @@
         <div class="header-content">
             <div class="logo-section">
                 <img src="https://via.placeholder.com/50x50?text=Logo" alt="Логотип" class="logo">
-                <nav class="menu">
-                    <a href="#links">Ссылки</a>
-                    <a href="#table">Таблица</a>
-                    <a href="#form">Форма</a>
-                </nav>
+                <h1 class="site-title">Разработка пользовательского Web-интерфейса</h1>
             </div>
-            <h1 class="site-title">Разработка пользовательского Web-интерфейса</h1>
+            <nav class="menu">
+                <a href="#table">Таблица</a>
+                <a href="#links">Ссылки</a>
+                <a href="#form">Форма</a>
+            </nav>
         </div>
     </header>
 
     <main class="container">
-        <section id="links">
-            <h2>Маркированный список гиперссылок</h2>
-            
-            <ul>
-                <li><a href="http://kubsu.ru">Абсолютная ссылка на kubsu.ru</a></li>
-                <li><a href="https://kubsu.ru">Абсолютная ссылка на kubsu.ru (HTTPS)</a></li>
-                <li><a href="https://kubsu.ru"><img src="https://via.placeholder.com/100x50?text=KubSU+Logo" alt="Ссылка-изображение на KubSU"></a></li>
-                <li><a href="/about">Сокращенная ссылка на внутреннюю страницу</a></li>
-                <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
-                <li><a href="#fragment">Ссылка на фрагмент текущей страницы</a></li>
-                <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами</a></li>
-                <li><a href="https://example.com/user?id=12345">Ссылка с параметром id</a></li>
-                <li><a href="current-page.html">Относительная ссылка в текущем каталоге</a></li>
-                <li><a href="about/company.html">Относительная ссылка в каталоге about</a></li>
-                <li><a href="../parent-page.html">Относительная ссылка на уровень выше</a></li>
-                <li><a href="../../grandparent-page.html">Относительная ссылка на два уровня выше</a></li>
-                <li>Это <a href="https://kubsu.ru">контекстная ссылка</a> в тексте абзаца</li>
-                <li><a href="https://example.com/page#section">Ссылка на фрагмент стороннего сайта</a></li>
-                
-                <li>
-                    Ссылки из областей картинки:
-                    <div class="image-map">
-                        <img src="https://via.placeholder.com/300x200?text=Image+Map" alt="Пример изображения с картой ссылок" usemap="#examplemap">
-                        <map name="examplemap">
-                            <area shape="rect" coords="0,0,150,100" href="https://kubsu.ru" alt="Прямоугольная область">
-                            <area shape="circle" coords="225,150,50" href="https://kubsu.ru/en" alt="Круглая область">
-                        </map>
-                    </div>
-                </li>
-                
-                <li><a href="">Ссылка с пустым href</a></li>
-                <li><a>Ссылка без href</a></li>
-                <li><a href="https://kubsu.ru" rel="nofollow">Ссылка с запретом перехода для поисковиков</a></li>
-                <li><a href="https://kubsu.ru" rel="noindex">Ссылка запрещенная для индексации</a></li>
-                
-                <li>
-                    Нумерованный список ссылок с title:
-                    <ol>
-                        <li><a href="https://kubsu.ru" title="Официальный сайт КубГУ">КубГУ</a></li>
-                        <li><a href="https://kubsu.ru/university" title="Информация об университете">Об университете</a></li>
-                        <li><a href="https://kubsu.ru/education" title="Образовательные программы">Образование</a></li>
-                    </ol>
-                </li>
-                
-                <li><a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на FTP файл с авторизацией</a></li>
-            </ul>
+        <div class="content-wrapper">
+            <section id="table" class="content-section">
+                <h2>Таблица</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>ФИО</th>
+                            <th>Должность</th>
+                            <th>Отдел</th>
+                            <th>Зарплата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Иванов Иван Иванович</td>
+                            <td>Разработчик</td>
+                            <td>IT</td>
+                            <td>100000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Петров Петр Петрович</td>
+                            <td>Дизайнер</td>
+                            <td>IT</td>
+                            <td>90000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Сидорова Мария Ивановна</td>
+                            <td>Менеджер проектов</td>
+                            <td rowspan="2">Управление</td>
+                            <td>120000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Кузнецов Алексей Сергеевич</td>
+                            <td>Руководитель отдела</td>
+                            <td>150000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Смирнова Ольга Владимировна</td>
+                            <td>Тестировщик</td>
+                            <td>QA</td>
+                            <td>80000</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Итого сотрудников:</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-            <h3 id="fragment">Фрагмент страницы</h3>
-            <p>Это целевой фрагмент страницы, на который ведет одна из ссылок выше.</p>
-        </section>
+            <section id="links" class="content-section">
+                <h2>Маркированный список гиперссылок</h2>
+                
+                <ul>
+                    <li><a href="http://kubsu.ru">Абсолютная ссылка на kubsu.ru</a></li>
+                    <li><a href="https://kubsu.ru">Абсолютная ссылка на kubsu.ru (HTTPS)</a></li>
+                    <li><a href="https://kubsu.ru"><img src="https://via.placeholder.com/100x50?text=KubSU+Logo" alt="Ссылка-изображение на KubSU"></a></li>
+                    <li><a href="/about">Сокращенная ссылка на внутреннюю страницу</a></li>
+                    <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
+                    <li><a href="#fragment">Ссылка на фрагмент текущей страницы</a></li>
+                    <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами</a></li>
+                    <li><a href="https://example.com/user?id=12345">Ссылка с параметром id</a></li>
+                    <li><a href="current-page.html">Относительная ссылка в текущем каталоге</a></li>
+                    <li><a href="about/company.html">Относительная ссылка в каталоге about</a></li>
+                    <li><a href="../parent-page.html">Относительная ссылка на уровень выше</a></li>
+                    <li><a href="../../grandparent-page.html">Относительная ссылка на два уровня выше</a></li>
+                    <li>Это <a href="https://kubsu.ru">контекстная ссылка</a> в тексте абзаца</li>
+                    <li><a href="https://example.com/page#section">Ссылка на фрагмент стороннего сайта</a></li>
+                    
+                    <li>
+                        Ссылки из областей картинки:
+                        <div class="image-map">
+                            <img src="https://via.placeholder.com/300x200?text=Image+Map" alt="Пример изображения с картой ссылок" usemap="#examplemap">
+                            <map name="examplemap">
+                                <area shape="rect" coords="0,0,150,100" href="https://kubsu.ru" alt="Прямоугольная область">
+                                <area shape="circle" coords="225,150,50" href="https://kubsu.ru/en" alt="Круглая область">
+                            </map>
+                        </div>
+                    </li>
+                    
+                    <li><a href="">Ссылка с пустым href</a></li>
+                    <li><a>Ссылка без href</a></li>
+                    <li><a href="https://kubsu.ru" rel="nofollow">Ссылка с запретом перехода для поисковиков</a></li>
+                    <li><a href="https://kubsu.ru" rel="noindex">Ссылка запрещенная для индексации</a></li>
+                    
+                    <li>
+                        Нумерованный список ссылок с title:
+                        <ol>
+                            <li><a href="https://kubsu.ru" title="Официальный сайт КубГУ">КубГУ</a></li>
+                            <li><a href="https://kubsu.ru/university" title="Информация об университете">Об университете</a></li>
+                            <li><a href="https://kubsu.ru/education" title="Образовательные программы">Образование</a></li>
+                        </ol>
+                    </li>
+                    
+                    <li><a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на FTP файл с авторизацией</a></li>
+                </ul>
 
-        <section id="table">
-            <h2>Таблица</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>№</th>
-                        <th>ФИО</th>
-                        <th>Должность</th>
-                        <th>Отдел</th>
-                        <th>Зарплата</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Иванов Иван Иванович</td>
-                        <td>Разработчик</td>
-                        <td>IT</td>
-                        <td>100000</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Петров Петр Петрович</td>
-                        <td>Дизайнер</td>
-                        <td>IT</td>
-                        <td>90000</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Сидорова Мария Ивановна</td>
-                        <td>Менеджер проектов</td>
-                        <td rowspan="2">Управление</td>
-                        <td>120000</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Кузнецов Алексей Сергеевич</td>
-                        <td>Руководитель отдела</td>
-                        <td>150000</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Смирнова Ольга Владимировна</td>
-                        <td>Тестировщик</td>
-                        <td>QA</td>
-                        <td>80000</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">Итого сотрудников:</td>
-                        <td>5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                <h3 id="fragment">Фрагмент страницы</h3>
+                <p>Это целевой фрагмент страницы, на который ведет одна из ссылок выше.</p>
+            </section>
+        </div>
 
-        <section id="form">
+        <section id="form" class="content-section">
             <h2>Форма для заполнения</h2>
             
             <form action="/submit" method="post">
@@ -194,7 +196,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; Сергей Синица 2023</p>
+            <p>&copy; Сотников Александр 2025</p>
             <p>Разработка пользовательского Web-интерфейса</p>
         </div>
     </footer>
