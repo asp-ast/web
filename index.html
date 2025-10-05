@@ -4,201 +4,313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Разработка пользовательского Web-интерфейса</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo-section">
-                <img src="https://via.placeholder.com/50x50?text=Logo" alt="Логотип" class="logo">
-                <h1 class="site-title">Разработка пользовательского Web-интерфейса</h1>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Шапка -->
+    <header class="bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <!-- Лого и название -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center">
+                        <img src="https://via.placeholder.com/50x50?text=Logo" alt="Логотип" class="logo me-3">
+                        <h1 class="site-title h4 mb-0">Разработка пользовательского Web-интерфейса</h1>
+                    </div>
+                </div>
+                <!-- Навигация -->
+                <div class="col-12 col-md-6 col-lg-8 mt-2 mt-md-0">
+                    <nav class="menu">
+                        <div class="d-flex flex-column flex-md-row gap-2 justify-content-md-end">
+                            <a href="#table" class="btn btn-outline-light btn-sm">Таблица</a>
+                            <a href="#links" class="btn btn-outline-light btn-sm">Ссылки</a>
+                            <a href="#form" class="btn btn-outline-light btn-sm">Форма</a>
+                        </div>
+                    </nav>
+                </div>
             </div>
-            <nav class="menu">
-                <a href="#table">Таблица</a>
-                <a href="#links">Ссылки</a>
-                <a href="#form">Форма</a>
-            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <div class="content-wrapper">
-            <section id="table" class="content-section">
-                <h2>Таблица</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>№</th>
-                            <th>ФИО</th>
-                            <th>Должность</th>
-                            <th>Отдел</th>
-                            <th>Зарплата</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Иванов Иван Иванович</td>
-                            <td>Разработчик</td>
-                            <td>IT</td>
-                            <td>100000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Петров Петр Петрович</td>
-                            <td>Дизайнер</td>
-                            <td>IT</td>
-                            <td>90000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Сидорова Мария Ивановна</td>
-                            <td>Менеджер проектов</td>
-                            <td rowspan="2">Управление</td>
-                            <td>120000</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Кузнецов Алексей Сергеевич</td>
-                            <td>Руководитель отдела</td>
-                            <td>150000</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Смирнова Ольга Владимировна</td>
-                            <td>Тестировщик</td>
-                            <td>QA</td>
-                            <td>80000</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Итого сотрудников:</td>
-                            <td>5</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+    <!-- Основной контент -->
+    <main class="container flex-grow-1 py-4">
+        <!-- Сетка для таблицы и списка ссылок -->
+        <div class="row g-4 mb-4">
+            <!-- На мобильных: таблица выше, на десктопе: слева -->
+            <div class="col-12 col-lg-6 order-2 order-lg-1">
+                <section id="table" class="content-section bg-white rounded shadow-sm p-3 p-md-4">
+                    <h2 class="h4 border-bottom pb-2 mb-3">Таблица</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col">№</th>
+                                    <th scope="col">ФИО</th>
+                                    <th scope="col">Должность</th>
+                                    <th scope="col">Отдел</th>
+                                    <th scope="col">Зарплата</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Иванов Иван Иванович</td>
+                                    <td>Разработчик</td>
+                                    <td>IT</td>
+                                    <td>100000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Петров Петр Петрович</td>
+                                    <td>Дизайнер</td>
+                                    <td>IT</td>
+                                    <td>90000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Сидорова Мария Ивановна</td>
+                                    <td>Менеджер проектов</td>
+                                    <td rowspan="2">Управление</td>
+                                    <td>120000</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Кузнецов Алексей Сергеевич</td>
+                                    <td>Руководитель отдела</td>
+                                    <td>150000</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Смирнова Ольга Владимировна</td>
+                                    <td>Тестировщик</td>
+                                    <td>QA</td>
+                                    <td>80000</td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td colspan="4"><strong>Итого сотрудников:</strong></td>
+                                    <td><strong>5</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
 
-            <section id="links" class="content-section">
-                <h2>Маркированный список гиперссылок</h2>
-                
-                <ul>
-                    <li><a href="http://kubsu.ru">Абсолютная ссылка на kubsu.ru</a></li>
-                    <li><a href="https://kubsu.ru">Абсолютная ссылка на kubsu.ru (HTTPS)</a></li>
-                    <li><a href="https://kubsu.ru"><img src="https://via.placeholder.com/100x50?text=KubSU+Logo" alt="Ссылка-изображение на KubSU"></a></li>
-                    <li><a href="/about">Сокращенная ссылка на внутреннюю страницу</a></li>
-                    <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
-                    <li><a href="#fragment">Ссылка на фрагмент текущей страницы</a></li>
-                    <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами</a></li>
-                    <li><a href="https://example.com/user?id=12345">Ссылка с параметром id</a></li>
-                    <li><a href="current-page.html">Относительная ссылка в текущем каталоге</a></li>
-                    <li><a href="about/company.html">Относительная ссылка в каталоге about</a></li>
-                    <li><a href="../parent-page.html">Относительная ссылка на уровень выше</a></li>
-                    <li><a href="../../grandparent-page.html">Относительная ссылка на два уровня выше</a></li>
-                    <li>Это <a href="https://kubsu.ru">контекстная ссылка</a> в тексте абзаца</li>
-                    <li><a href="https://example.com/page#section">Ссылка на фрагмент стороннего сайта</a></li>
+            <!-- На мобильных: ссылки ниже, на десктопе: справа -->
+            <div class="col-12 col-lg-6 order-1 order-lg-2">
+                <section id="links" class="content-section bg-white rounded shadow-sm p-3 p-md-4">
+                    <h2 class="h4 border-bottom pb-2 mb-3">Маркированный список гиперссылок</h2>
                     
-                    <li>
-                        Ссылки из областей картинки:
-                        <div class="image-map">
-                            <img src="https://via.placeholder.com/300x200?text=Image+Map" alt="Пример изображения с картой ссылок" usemap="#examplemap">
-                            <map name="examplemap">
-                                <area shape="rect" coords="0,0,150,100" href="https://kubsu.ru" alt="Прямоугольная область">
-                                <area shape="circle" coords="225,150,50" href="https://kubsu.ru/en" alt="Круглая область">
-                            </map>
-                        </div>
-                    </li>
-                    
-                    <li><a href="">Ссылка с пустым href</a></li>
-                    <li><a>Ссылка без href</a></li>
-                    <li><a href="https://kubsu.ru" rel="nofollow">Ссылка с запретом перехода для поисковиков</a></li>
-                    <li><a href="https://kubsu.ru" rel="noindex">Ссылка запрещенная для индексации</a></li>
-                    
-                    <li>
-                        Нумерованный список ссылок с title:
-                        <ol>
-                            <li><a href="https://kubsu.ru" title="Официальный сайт КубГУ">КубГУ</a></li>
-                            <li><a href="https://kubsu.ru/university" title="Информация об университете">Об университете</a></li>
-                            <li><a href="https://kubsu.ru/education" title="Образовательные программы">Образование</a></li>
-                        </ol>
-                    </li>
-                    
-                    <li><a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на FTP файл с авторизацией</a></li>
-                </ul>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="http://kubsu.ru" class="text-decoration-none">Абсолютная ссылка на kubsu.ru</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru" class="text-decoration-none">Абсолютная ссылка на kubsu.ru (HTTPS)</a></li>
+                        <li class="mb-2">
+                            <a href="https://kubsu.ru" class="text-decoration-none">
+                                <img src="https://via.placeholder.com/100x50?text=KubSU+Logo" alt="Ссылка-изображение на KubSU" class="img-fluid">
+                            </a>
+                        </li>
+                        <li class="mb-2"><a href="/about" class="text-decoration-none">Сокращенная ссылка на внутреннюю страницу</a></li>
+                        <li class="mb-2"><a href="/" class="text-decoration-none">Сокращенная ссылка на главную страницу</a></li>
+                        <li class="mb-2"><a href="#fragment" class="text-decoration-none">Ссылка на фрагмент текущей страницы</a></li>
+                        <li class="mb-2"><a href="https://example.com/page?param1=value1&param2=value2&param3=value3" class="text-decoration-none">Ссылка с тремя параметрами</a></li>
+                        <li class="mb-2"><a href="https://example.com/user?id=12345" class="text-decoration-none">Ссылка с параметром id</a></li>
+                        <li class="mb-2"><a href="current-page.html" class="text-decoration-none">Относительная ссылка в текущем каталоге</a></li>
+                        <li class="mb-2"><a href="about/company.html" class="text-decoration-none">Относительная ссылка в каталоге about</a></li>
+                        <li class="mb-2"><a href="../parent-page.html" class="text-decoration-none">Относительная ссылка на уровень выше</a></li>
+                        <li class="mb-2"><a href="../../grandparent-page.html" class="text-decoration-none">Относительная ссылка на два уровня выше</a></li>
+                        <li class="mb-2">Это <a href="https://kubsu.ru" class="text-decoration-none">контекстная ссылка</a> в тексте абзаца</li>
+                        <li class="mb-2"><a href="https://example.com/page#section" class="text-decoration-none">Ссылка на фрагмент стороннего сайта</a></li>
+                        
+                        <li class="mb-2">
+                            Ссылки из областей картинки:
+                            <div class="image-map mt-2">
+                                <img src="https://via.placeholder.com/300x200?text=Image+Map" alt="Пример изображения с картой ссылок" class="img-fluid" usemap="#examplemap">
+                                <map name="examplemap">
+                                    <area shape="rect" coords="0,0,150,100" href="https://kubsu.ru" alt="Прямоугольная область">
+                                    <area shape="circle" coords="225,150,50" href="https://kubsu.ru/en" alt="Круглая область">
+                                </map>
+                            </div>
+                        </li>
+                        
+                        <li class="mb-2"><a href="" class="text-decoration-none">Ссылка с пустым href</a></li>
+                        <li class="mb-2"><a class="text-decoration-none">Ссылка без href</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru" rel="nofollow" class="text-decoration-none">Ссылка с запретом перехода для поисковиков</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru" rel="noindex" class="text-decoration-none">Ссылка запрещенная для индексации</a></li>
+                        
+                        <li class="mb-2">
+                            Нумерованный список ссылок с title:
+                            <ol class="mt-2">
+                                <li class="mb-1"><a href="https://kubsu.ru" title="Официальный сайт КубГУ" class="text-decoration-none">КубГУ</a></li>
+                                <li class="mb-1"><a href="https://kubsu.ru/university" title="Информация об университете" class="text-decoration-none">Об университете</a></li>
+                                <li class="mb-1"><a href="https://kubsu.ru/education" title="Образовательные программы" class="text-decoration-none">Образование</a></li>
+                            </ol>
+                        </li>
+                        
+                        <li class="mb-2"><a href="ftp://user:password@ftp.example.com/file.txt" class="text-decoration-none">Ссылка на FTP файл с авторизацией</a></li>
+                    </ul>
 
-                <h3 id="fragment">Фрагмент страницы</h3>
-                <p>Это целевой фрагмент страницы, на который ведет одна из ссылок выше.</p>
-            </section>
+                    <h3 id="fragment" class="h5 mt-4">Фрагмент страницы</h3>
+                    <p class="text-muted">Это целевой фрагмент страницы, на который ведет одна из ссылок выше.</p>
+                </section>
+            </div>
         </div>
 
-        <section id="form" class="content-section">
-            <h2>Форма для заполнения</h2>
+        <!-- Форма -->
+        <section id="form" class="content-section bg-white rounded shadow-sm p-3 p-md-4">
+            <h2 class="h4 border-bottom pb-2 mb-3">Форма для заполнения</h2>
             
-            <form action="/submit" method="post">
-                <fieldset>
-                    <legend>Личная информация</legend>
-                    
-                    <label for="fio">ФИО:</label>
-                    <input type="text" id="fio" name="fio" required>
-                    
-                    <label for="phone">Телефон:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="birthdate">Дата рождения:</label>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                </fieldset>
+            <form action="/submit" method="post" class="needs-validation" novalidate>
+                <!-- Личная информация -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <fieldset class="border p-3 rounded">
+                            <legend class="w-auto px-2 fs-6">Личная информация</legend>
+                            
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="fio" class="form-label">ФИО:</label>
+                                    <input type="text" class="form-control" id="fio" name="fio" required>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста, введите ваше ФИО.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6">
+                                    <label for="phone" class="form-label">Телефон:</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста, введите ваш телефон.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6">
+                                    <label for="email" class="form-label">E-mail:</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста, введите корректный email.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-6">
+                                    <label for="birthdate" class="form-label">Дата рождения:</label>
+                                    <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста, выберите дату рождения.
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
 
-                <fieldset>
-                    <legend>Пол</legend>
-                    <label>
-                        <input type="radio" name="gender" value="male" required> Мужской
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="female"> Женский
-                    </label>
-                </fieldset>
+                <!-- Пол -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <fieldset class="border p-3 rounded">
+                            <legend class="w-auto px-2 fs-6">Пол</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                <label class="form-check-label" for="male">Мужской</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                <label class="form-check-label" for="female">Женский</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
 
-                <fieldset>
-                    <legend>Любимый язык программирования</legend>
-                    <select name="languages" multiple size="6" required>
-                        <option value="pascal">Pascal</option>
-                        <option value="c">C</option>
-                        <option value="cpp">C++</option>
-                        <option value="javascript">JavaScript</option>
-                        <option value="php">PHP</option>
-                        <option value="python">Python</option>
-                        <option value="java">Java</option>
-                        <option value="haskel">Haskel</option>
-                        <option value="clojure">Clojure</option>
-                        <option value="prolog">Prolog</option>
-                        <option value="scala">Scala</option>
-                    </select>
-                    <small>Для множественного выбора используйте Ctrl+клик (Cmd+клик на Mac)</small>
-                </fieldset>
+                <!-- Языки программирования -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <fieldset class="border p-3 rounded">
+                            <legend class="w-auto px-2 fs-6">Любимый язык программирования</legend>
+                            <select name="languages" class="form-select" multiple size="6" required>
+                                <option value="pascal">Pascal</option>
+                                <option value="c">C</option>
+                                <option value="cpp">C++</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="php">PHP</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="haskel">Haskel</option>
+                                <option value="clojure">Clojure</option>
+                                <option value="prolog">Prolog</option>
+                                <option value="scala">Scala</option>
+                            </select>
+                            <small class="form-text text-muted">Для множественного выбора используйте Ctrl+клик (Cmd+клик на Mac)</small>
+                        </fieldset>
+                    </div>
+                </div>
 
-                <fieldset>
-                    <legend>Биография</legend>
-                    <textarea name="bio" rows="5" cols="50" placeholder="Расскажите о себе..." required></textarea>
-                </fieldset>
+                <!-- Биография -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <fieldset class="border p-3 rounded">
+                            <legend class="w-auto px-2 fs-6">Биография</legend>
+                            <textarea name="bio" class="form-control" rows="5" placeholder="Расскажите о себе..." required></textarea>
+                        </fieldset>
+                    </div>
+                </div>
 
-                <label>
-                    <input type="checkbox" name="agreement" required>
-                    С контрактом ознакомлен(а)
-                </label>
+                <!-- Соглашение -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                            <label class="form-check-label" for="agreement">
+                                С контрактом ознакомлен(а)
+                            </label>
+                            <div class="invalid-feedback">
+                                Необходимо согласие с контрактом.
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <br><br>
-                <button type="submit">Сохранить</button>
+                <!-- Кнопка отправки -->
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+                    </div>
+                </div>
             </form>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; Сотников Александр 2025</p>
-            <p>Разработка пользовательского Web-интерфейса</p>
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-1">&copy; Сотников Александр 2025</p>
+                    <p class="mb-0">Разработка пользовательского Web-интерфейса</p>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Bootstrap 5 JS с Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Валидация формы -->
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 </body>
 </html>
